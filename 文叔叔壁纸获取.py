@@ -5,7 +5,6 @@ import json
 import re
 
 def dowimg(t,i,link):
-    global c
     dir = t + '\\' + i  # 构造完整文件名称
     print(dir)
     f = requests.get(link)
@@ -29,7 +28,8 @@ def get_info():
 link = 'https://wss-static.wenshushu.cn/images/background/'
 info = get_info()
 for t,k in info.items():
-    os.mkdir(t)
+    if not(t in os.listdir()):
+        os.mkdir(t)
     for i in range(1,k+1):
         name = str(i)+'.jpg'
         dowimg(t,name,link+t+'/'+name)

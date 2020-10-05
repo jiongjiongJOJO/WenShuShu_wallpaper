@@ -13,21 +13,7 @@ def dowimg(t,i,link):
         code.write(f.content)  # 保存文件
 
 
-'''
-s = {'hot':21,
-     'design':19,
-     'landscape':59,
-     'sea':32,
-     'city':49,
-     'sky':21,
-     'technology':21,
-     'retro':20,
-     'sexy':18,
-     'office':12,
-     'animals':21,
-     'sports':29,
-     'texture':39
-     }'''
+
 def get_info():
     data = requests.get('https://www.wenshushu.cn/ag/gls?prod=com.wenshushu.web.pc').text
     pattern = '\\\\"data\\\\":(.*?)","PACK_DOWNLOAD_NUM'
